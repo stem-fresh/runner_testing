@@ -1,0 +1,26 @@
+name: Dev Branch Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  runner_switch: 'OFF'  # Set to 'OFF' to use shared runner #Add these line                   
+
+jobs:
+  build:
+    runs-on: ${{ vars.runner_switch == 'ON' && 'self-hosted' || 'ubuntu-latest' }}  #add these line 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Build Step
+        run: echo "1st job running succesfull"
+
+  
