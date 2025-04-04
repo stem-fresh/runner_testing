@@ -23,4 +23,6 @@ jobs:
       - name: Build Step
         run: echo "1st job running succesfull"
 
+      - name: Build Step
+        run: echo $runner_swich
   
