@@ -24,5 +24,5 @@ jobs:
         run: echo "1st job running succesfull"
 
       - name: Build Step
-        run: echo ${{env.runner_swich}}
+        run: echo ${{env.runner_switch}}
   
