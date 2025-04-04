@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  runner_switch: 'OFF'  # Set to 'OFF' to use shared runner #Add these line                   
+  runner_switch: ${{vars.RUNNER_SWITCH}}  # Set to 'OFF' to use shared runner #Add these line                   
 
 jobs:
   build:
