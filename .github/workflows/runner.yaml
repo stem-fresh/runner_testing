@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    runs-on: ${{vars.RUNS_ON}} #add these line 
+    runs-on: ${{ vars.RUNS_ON }} #add these line 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
