@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    runs-on: ${{ if ==(vars.runner_switch, 'ON') }} self-hosted ${{ else }} ubuntu-latest ${{ end }}  #add these line 
+    runs-on: ${{ vars.runner_switch == 'ON' && 'self-hosted' || 'ubuntu-latest' }}  #add these line 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
