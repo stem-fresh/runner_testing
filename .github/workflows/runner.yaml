@@ -7,11 +7,11 @@ on:
 
 env:
   RUNNER_SWITCH: ${{ github.ref == 'refs/heads/dev' && vars.RUNNER_SWITCH_DEV || github.ref == 'refs/heads/qa' && vars.RUNNER_SWITCH_QA || github.ref == 'refs/heads/uat' && vars.RUNNER_SWITCH_UAT || github.ref == 'refs/heads/main' && vars.RUNNER_SWITCH_PROD }}  # Set to 'OFF' to use shared runner
-  RUNS_ON: ${{ RUNNER_SWITCH == 'ON' && 'self-hosted' || 'ubuntu-latest' }}  # Set to 'OFF' to use shared runner #Add these line                   
+  RUNS_ON: ${{RUNNER_SWITCH == 'ON' && 'self-hosted' || 'ubuntu-latest' }}  # Set to 'OFF' to use shared runner #Add these line                   
 
 jobs:
   build:
-    runs-on: ${{ env.RUNS_ON }} #add these line 
+    runs-on: $RUNS_ON  #add these line 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
